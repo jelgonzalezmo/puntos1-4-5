@@ -31,7 +31,6 @@ for (int i =0;i<a;i++){
 this.balon1=new Thing(ciudad1,3,1);}}
 
 
-
 public void moverse(){
 this.robot1.move();
 for(int i=0;i<a;i++){
@@ -75,19 +74,6 @@ public void girarizquierda(){
     for (int i=0;i<2;i++){
 this.robot1.turnLeft();
 }}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
