@@ -18,7 +18,7 @@ import becker.robots.Thing;
 public class Futbol {
     private City ciudad;
     private Robot  robot;
-private Thing balon;
+    private Thing balon;
 public Futbol(){
 this.ciudad=new City();
 this.robot=new Robot(ciudad,5,5,Direction.WEST);
@@ -27,26 +27,20 @@ this.balon=new Thing(ciudad,5,5);
 public void jugar(){
 for(int i=0;i<2;i++){
 this.robot.pickThing();
-this.robot.move();
-for (int j=0;j<3;j++){
-this.robot.turnLeft();
-}
-this.robot.move();
-this.robot.putThing();
-this.robot.turnLeft();
+advance();
+advanceRight();
+advance();
+dejar();
 }
 this.robot.pickThing();
-this.robot.move();
-this.robot.putThing();
-this.robot.turnLeft();
+advance();
+dejar();
 this.robot.pickThing();
-this.robot.move();
-for (int j=0;j<3;j++){
-this.robot.turnLeft();
-}
+advance();
+advanceRight();
 this.robot.putThing();
 this.robot.pickThing();
-this.robot.move();
+advance();
 }
 
 
@@ -68,6 +62,7 @@ this.robot.pickThing();
 
 public void dejar(){
 this.robot.putThing();
+this.robot.turnLeft();
 }
 
 public void advanceRight(){

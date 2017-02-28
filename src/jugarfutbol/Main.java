@@ -11,8 +11,8 @@ package jugarfutbol;
  */
 public class Main {
      public static void main(String []args){
-     Futbol futbol=new Futbol();
-     futbol.jugar();
-      
-     }
+     
+     Punto4 histogramas=new Punto4();
+     histogramas.moverse();
+    }
 }
