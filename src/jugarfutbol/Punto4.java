@@ -15,7 +15,8 @@ public class Punto4 {
     private Thing balon1;
     
     int a=3;
-    
+    int b=5;
+    int c=4;
 
 public Punto4(){
 this.ciudad1=new City();
@@ -33,7 +34,7 @@ this.balon1=new Thing(ciudad1,3,1);}}
 
 public void moverse(){
 this.robot1.move();
-for(int i=0;i<a;i++){
+while(this.robot1.canPickThing()){
 Tomarobjeto();
 girarderechaymoverse();
 Devolverse();}
@@ -41,11 +42,12 @@ Devolverse();}
 
 public void avanzar(){
 this.robot1.move();
+
 }
 
 public void girarderechaymoverse(){
 this.robot1.turnLeft();
- for (int i =0;i<a-1;i++){
+ for (int i =0;i<a;i++){
  this.robot1.move();
  this.robot1.putThing();
  }
