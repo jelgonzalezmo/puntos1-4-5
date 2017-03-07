@@ -14,68 +14,70 @@ public class Punto4 {
     private Robot  robot1;
     private Thing balon1;
     
-    int a=3;
-    int b=5;
-    int c=4;
+   
 
 public Punto4(){
 this.ciudad1=new City();
-this.robot1=new Robot(ciudad1,0,1,Direction.SOUTH);
+this.robot1=new Robot(ciudad1,1,1,Direction.SOUTH);
 
-for (int i =0;i<a;i++){
+for (int i =0;i<3;i++){
 this.balon1=new Thing(ciudad1,1,1);}
 
-for (int i =0;i<a;i++){
+for (int i =0;i<2;i++){
 this.balon1=new Thing(ciudad1,2,1);}
 
-for (int i =0;i<a;i++){
-this.balon1=new Thing(ciudad1,3,1);}}
+for (int i =0;i<4;i++){
+this.balon1=new Thing(ciudad1,3,1);}
+
+for (int i =0;i<5;i++){
+this.balon1=new Thing(ciudad1,4,1);}
+
+for (int i =0;i<7;i++){
+this.balon1=new Thing(ciudad1,5,1);}
+}
 
 
 public void moverse(){
-this.robot1.move();
 while(this.robot1.canPickThing()){
 Tomarobjeto();
-girarderechaymoverse();
-Devolverse();}
+dejarobjeto();
+Devolverse();
 }
-
-public void avanzar(){
-this.robot1.move();
-
-}
-
-public void girarderechaymoverse(){
-this.robot1.turnLeft();
- for (int i =0;i<a;i++){
- this.robot1.move();
- this.robot1.putThing();
- }
 }
 
 public void Devolverse(){
-   girarizquierda();
-    for (int i =0;i<a-1;i++){
-this.robot1.move();
+    girocompleto();
+   this.robot1.move(); 
+    girocompleto();
+   while(this.robot1.canPickThing()==false){
+     this.robot1.move(); 
+    }
+    while(this.robot1.canPickThing()==true){
+      this.robot1.turnLeft();
+      moverse();
+    }
         }
-    this.robot1.turnLeft();
-    this.robot1.move();
-     }
 
 public void Tomarobjeto(){
-    for (int i =0;i<a-1;i++){
-this.robot1.pickThing();}
-}
+    while(this.robot1.canPickThing()){
+    this.robot1.pickThing();}
+    }
 
 public void dejarobjeto(){
-this.robot1.putThing();
 this.robot1.turnLeft();
-}
+while(this.robot1.countThingsInBackpack()>=1){
+this.robot1.putThing();
+this.robot1.move();
+}}
 
 public void girarizquierda(){
     for (int i=0;i<2;i++){
 this.robot1.turnLeft();
 }}
 
+public void girocompleto(){
+girarizquierda();
+this.robot1.turnLeft();
+}
 
 }

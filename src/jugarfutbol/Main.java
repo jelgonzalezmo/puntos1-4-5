@@ -12,10 +12,10 @@ package jugarfutbol;
 public class Main {
      public static void main(String []args){
      
-     //Punto4 histogramas=new Punto4();
-     //histogramas.moverse();
-     Punto5 paredes=new Punto5();
+     Punto4 histogramas=new Punto4();
+     histogramas.moverse();
+     /*Punto5 paredes=new Punto5();
      paredes.funcion();
-             
+       */      
     }
 }
